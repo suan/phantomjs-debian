@@ -20,5 +20,5 @@ task :package64 do
 end
 
 def package path, arch, version
-  puts `cd #{path} && fpm -s dir -t deb -n phantomjs -a #{arch} -v #{version} .`
+  puts `fpm -C #{path} -s dir -t deb -n phantomjs -a #{arch} -v #{version} .`
 end
