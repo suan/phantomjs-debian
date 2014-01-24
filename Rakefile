@@ -17,7 +17,7 @@ end
 
 desc "Package 64bit Wheezy PhantomJS"
 task :package64_wheezy do
-  package DIR64_WHEEZY, 'x86_64', '1.9.6-0lenny'
+  package DIR64_WHEEZY, 'x86_64', '1.9.6-0wheezy'
 end
 
 def package path, arch, version
