@@ -1,22 +1,23 @@
 require 'rubygems'
 require 'fpm'
 
-DIR32 = 'phantomjs-1.6.2-linux-i686-dynamic'
-DIR64 = 'phantomjs-1.7.0-linux-x86_64'
-
-task :default => :package_all
-
-desc "Package 32bit and 64bit Lenny PhantomJS"
-task :package_all => [:package32, :package64]
+DIR32_LENNY = 'phantomjs-1.6.2-linux-i686-dynamic'
+DIR64_LENNY = 'phantomjs-1.7.0-linux-x86_64'
+DIR64_WHEEZY = 'phantomjs-1.9.6-linux-x86_64'
 
 desc "Package 32bit Lenny PhantomJS"
-task :package32 do
-  package DIR32, 'i386', '1.6.2-0lenny'
+task :package32_lenny do
+  package DIR32_LENNY, 'i386', '1.6.2-0lenny'
 end
 
 desc "Package 64bit Lenny PhantomJS"
-task :package64 do
-  package DIR64, 'x86_64', '1.7.0-0lenny'
+task :package64_lenny do
+  package DIR64_LENNY, 'x86_64', '1.7.0-0lenny'
+end
+
+desc "Package 64bit Wheezy PhantomJS"
+task :package64_wheezy do
+  package DIR64_WHEEZY, 'x86_64', '1.9.6-0lenny'
 end
 
 def package path, arch, version
